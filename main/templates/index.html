@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_inherit %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
+  <script type="text/javascript" src="{% static 'js/header.js' %}"></script>
+{% endblock %}
+
+{% block container %}
+  <div class="top_half">
+    Time to Decide Between...
+  </div>
+  <div class="bottom_half">
+    <button>Restaurants</button>
+    <button>Recipes</button>
+  </div>
+{% endblock %}
