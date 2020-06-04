@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Indecisive Decision</title>
+      {% load static %}
+      <link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}" />
+      <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}" />
+      <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}" />
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      {% block head_inherit %}
+      {% endblock %}
+  </head>
+  <body>
+    <header>
+      <div class="left_half">
+        <img src="{% static 'img/logo_dark.png' %}" alt="The Infinite Question">
+        <div class="header_left_text">
+        </div>
+      </div>
+      <div class="right_half">
+        <a class="header_right_text" href="{% url 'login_signup' %}">
+          Log In/Sign Up
+        </a>
+      </div>
+    </header>
+    <div class="container">
+      {% block container %}
+      {% endblock %}
+    </div>
+    <footer>
+      <div class="footer_text">
+        Indecisive Decision.<br>Created by Michelle Giraldo, Mitchell Moscovics, Ezra Nobrega
+      </div>
+    </footer>
+  </body>
+</html>
