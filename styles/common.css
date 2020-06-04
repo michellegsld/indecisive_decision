@@ -1,0 +1,23 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: "Comic Sans MS";
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin-top: 75px;           /* In order to not include header height within container */
+    margin-bottom: 60px;        /* In order to not include footer height within container */
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #C9F0FF;
+}
