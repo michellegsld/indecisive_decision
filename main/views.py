@@ -3,5 +3,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 
-def home(response):
-    return HttpResponse('Home Page')
+def index(response):
+    return render(response, 'index.html')
+
+def login_signup(response):
+    return render(response, 'login_signup.html')
