@@ -1,0 +1,16 @@
+footer {
+    position: absolute;             /* Window re-size doesn't affect appearance */
+    bottom: 0px;                    /* Keeps footer at bottom of page */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 60px;
+    width: 100%;
+    background-color: #2F6690;
+}
+
+.footer_text {
+    background-color: floralwhite;
+    padding: 5px;                   /* To not have text right against edges */
+}
