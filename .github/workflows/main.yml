@@ -27,17 +27,17 @@ jobs:
       uses: einaregilsson/beanstalk-deploy@v10
       with:
         # AWS Access Key
-        aws_access_key: 
+        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
         # AWS Secret Key
-        aws_secret_key: 
+        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         # AWS Region
-        region: 
+        region: us-east-1
         # Beanstalk application name
-        application_name: 
+        application_name: IndecisiveDecision
         # Beanstalk environment name. If empty a version will be created but not deployed anywhere.
-        environment_name: # optional
+        environment_name: Indecisivedecision-env
         # Version label for new Beanstalk version
-        version_label: 
+        version_label: 1
         # Version description for the new Beanstalk version
         version_description: # optional
         # Zip file with the version to deploy. If skipped the action will deploy existing version.
