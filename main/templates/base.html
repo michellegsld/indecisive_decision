@@ -4,27 +4,41 @@
     <meta charset="utf-8">
     <title>Indecisive Decision</title>
       {% load static %}
+      {% block head_inherit %}{% endblock %}
       <link rel="stylesheet" type="text/css" href="{% static 'css/common.css' %}" />
       <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}" />
       <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}" />
       <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}" />
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-      {% block head_inherit %}
-      {% endblock %}
+      <script type="text/javascript" src="{% static 'js/common.js' %}"></script>
   </head>
   <body>
     <header>
       <div class="left_half">
         <img src="{% static 'img/logo_dark.png' %}" alt="The Infinite Question">
         <div class="header_left_text">
+          <!--*random message*-->
         </div>
       </div>
       <div class="right_half">
-        <a class="header_right_text" href="{% url 'login_signup' %}">
+        <text class="login_signup_text">
           Log In/Sign Up
-        </a>
+        </text>
       </div>
     </header>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-body">
+          <span class="close">&times;</span>
+          <h4>Login</h4>
+          <form>
+            <input type="text" name="username" class="username form-control" placeholder="Username"/>
+            <input type="password" name="password" class="password form-control" placeholder="Password"/>
+            <input class="btn login" type="submit" value="Login" />
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="container">
       {% block container %}
       {% endblock %}
