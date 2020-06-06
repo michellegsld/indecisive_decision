@@ -1,6 +1,17 @@
 window.onload = () => {
   // Create random message in header
-  $('.header_left_text').text('*Random Message*');
+  var randomArray = [
+    "Time to decide!",
+    "What will it be today?",
+    "Put an end to that indecision!",
+    "OwO",
+    "No more waiting around!",
+    "Decision time!",
+    "Indecisive Decision",
+    "What would you like?"
+  ]
+
+  $('.header_left_text').text(randomArray[Math.floor(Math.random()*randomArray.length)]);
 
   // To shorten code, refers to modal
   var modal = document.getElementById('modal');
