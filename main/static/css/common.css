@@ -24,6 +24,7 @@ body {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
+    align-self: center;
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -35,17 +36,47 @@ body {
 
 /* Modal Content/Box */
 .modal-content {
+    display: flex;
+    flex-direction: row;
     background-color: #fefefe;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 80%; /* Could be more or less, depending on screen size */
+    width: 500px;
+    height: 50%;
+}
+
+.modal-login {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    background-color: rosybrown;
+}
+
+.modal-signup {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    height: 100%;
+    align-items: center;
+    text-align: center;
+    background-color: rosybrown;
+    border-left: 7px dotted;
+}
+
+.modal-login .close {
+    visibility: hidden;
 }
 
 /* The Close Button */
 .close {
-    color: #aaa;
-    float: right;
+    align-self: flex-end;
+    margin-right: 5px;
+    color: rgb(255, 255, 255);
     font-size: 28px;
     font-weight: bold;
 }
@@ -56,3 +87,9 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+
+input {
+    margin: 5px;
+}
+
+/* Once body is thinner than 530: go vertical for mobile */
