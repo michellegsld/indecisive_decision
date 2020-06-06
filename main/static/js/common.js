@@ -6,7 +6,7 @@ window.onload = () => {
   var modal = document.getElementById('modal');
 
   //Display modal when "Log In/Sign Up" is clicked on
-  $('.login_signup_text').click(function () { modal.style.display = 'block'; });
+  $('.login_signup_text').click(function () { modal.style.display = 'flex'; });
 
   //Hide modal when the 'x' is clicked on the modal
   $('span').click(function () { modal.style.display = 'none'; });
