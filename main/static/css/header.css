@@ -12,7 +12,7 @@ header {
     background-color: #56CBF9;
 }
 
-.left_half {
+header .left_half {
     width: 50%;
     height: 100%;
     margin-left: 3%;            /* To not have text right against edge */
@@ -21,7 +21,7 @@ header {
     align-items: center;        /* Vertical  (text) */
 }
 
-.right_half {
+header .right_half {
     width: 50%;
     height: 100%;
     margin-right: 3%;           /* To not have text right against edge */
@@ -35,7 +35,7 @@ header {
     padding: 5px;               /* To not have text right against edges */
 }
 
-.header_right_text {
+.login_signup_text {
     color: black;
     background-color: mediumturquoise;
     text-decoration: underline;
