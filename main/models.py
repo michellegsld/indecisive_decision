@@ -20,7 +20,7 @@ class User(models.Model):
 
 class Recipes(models.Model):
     name = models.CharField(max_length=40)
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE, related_name='recipes', null=True)
     ingredients = models.ManyToManyField(Ingredient)
 
     def __str__(self):
