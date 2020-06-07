@@ -1,3 +1,9 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .top_half {
     flex: 1;                        /* Take up 1/3 of container */
     width: 100%;
@@ -13,7 +19,7 @@
     justify-content: space-evenly;  /* Spacing for the buttons */
 }
 
-button {
+.container button {
     height: 20%;
     width: 20%;
     min-height: 75px;           /* To not get so small that text bleeds */
