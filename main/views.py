@@ -5,6 +5,3 @@ from django.http import HttpResponse
 
 def index(response):
     return render(response, 'index.html')
-
-def login_signup(response):
-    return render(response, 'login_signup.html')
