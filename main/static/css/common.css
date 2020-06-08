@@ -93,3 +93,22 @@ input {
 }
 
 /* Once body is thinner than 530: go vertical for mobile */
+
+@media screen and (max-width: 530px) {
+    .modal-content {
+        flex-direction: column;
+        height: 60%;
+    }
+
+    .modal-signup {
+        border-left: hidden;
+        border-top: 7px dotted;
+    }
+
+    .modal-login h4 {
+        margin-top: 0px;
+    }
+
+    .modal-login .close { visibility: visible; }
+    .modal-signup .close { display: none; }
+}
