@@ -1,0 +1,43 @@
+img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+header {
+    position: absolute;            /* Window re-size doesn't affect appearance */
+    display: flex;
+    height: 75px;
+    width: 100%;
+    background-color: #56CBF9;
+}
+
+header .left_half {
+    width: 50%;
+    height: 100%;
+    margin-left: 3%;            /* To not have text right against edge */
+    display: flex;
+    justify-content: flex-start;/* Horizontal (text) */
+    align-items: center;        /* Vertical  (text) */
+}
+
+header .right_half {
+    width: 50%;
+    height: 100%;
+    margin-right: 3%;           /* To not have text right against edge */
+    display: flex;
+    justify-content: flex-end;  /* Horizontal (text) */
+    align-items: center;        /* Vertical (text)*/
+}
+
+.header_left_text {
+    background-color: mediumturquoise;
+    padding: 5px;               /* To not have text right against edges */
+}
+
+.login_signup_text {
+    color: black;
+    background-color: mediumturquoise;
+    text-decoration: underline;
+    padding: 5px;               /* To not have text right against edges */
+}
