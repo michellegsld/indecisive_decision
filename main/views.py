@@ -5,3 +5,6 @@ from django.http import HttpResponse
 
 def index(response):
     return render(response, 'index.html')
+
+def restaurant_search(response):
+    return render(response, 'restaurant_search.html')
