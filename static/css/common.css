@@ -93,6 +93,7 @@ input {
 }
 
 /* Once body is thinner than 530: go vertical for mobile */
+
 @media screen and (max-width: 530px) {
     .modal-content {
         flex-direction: column;
