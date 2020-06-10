@@ -50,7 +50,7 @@ def restaurant_search(response):
 def api_query(response, location, rating, price="1,2,3,4"):
     API_KEY = "3ITPjXB1GPOj78Fag-o0LLQv2nOt7gmQWNjDJxqo7RK-HYmwVTyzm7F0MK7-Z6sPFmyaiEH5sgfU6JkrH4nNV06JHFTJ7GSPFlj7CdSDx12qPtaezp0-x01xJ9G9XnYx"
     get_total = requests.get("https://api.yelp.com/v3/businesses/search", headers={"Authorization": "Bearer " + API_KEY}, params={'location': location, 'price': price, 'categories': 'restaurants,All', 'limit': 50})
-    offset = random.randint(1, float(get_total.json()["total"]) - 20)
+    offset = random.randint(1, float(get_total.json()["total"]) - 50)
     print(offset)
     print(float(get_total.json()["total"]))
     new_dict = {
