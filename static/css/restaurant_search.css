@@ -1,0 +1,91 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.top_half {                 /* Holds "Restaurant Search */
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.bottom_half {              /* Holds the box in the center with all the filters */
+    display: flex;
+    flex: 3;
+    width: 100%;
+    height: 100%;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.search_container {                 /* Outer-most box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    min-width: 300px; /* Could be more or less, depending on screen size */
+    width: auto;
+    height: 80%;
+}
+
+.search_box {                       /* Inner-most box */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #ff729f;
+    padding: 5px;
+    border: 1px solid #888;
+    width: 90%; /* Could be more or less, depending on screen size */
+    height: 90%;
+}
+
+.search_box div {       /* Affects every div in "search_box" */
+    margin-left: 20px;  /* Make space on left even with space to right of buttons */
+}
+
+.location_div input {
+    margin-bottom: 0px; /* Make space between filters even */
+    margin-left: 10px;   /* Spave white box from label, to then others aligned */
+    width: 150px;
+}
+
+.price_div label {      /* Have white filter boxes aligned */
+    margin-right: 35px;
+}
+
+.rating_div label {     /* Have white filter boxes aligned */
+    margin-right: 25px;
+}
+
+.results_div {
+    margin-top: 20px;   /* Add space to separate results section from filters */
+}
+
+.search_box text {         /* Affects "Lucky?" text next to it */
+    margin-left: 20px;
+}
+
+.search_box button {        /* Affects "Lucky?" and "Search" */
+    width: 30%;
+    height: 21px;
+    align-self: flex-end;
+    margin-top: 0px;
+    margin-right: 20px;
+    border-radius: 20px;
+}
+
+.results_div text {     /* Adds space after numbers (for spacing) */
+    margin-left: -1px;
+    margin-right: 15px;
+}
+
+@media screen and (max-width: 530px) {
+
+}
