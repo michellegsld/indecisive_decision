@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_inherit %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/restaurant_search.css' %}" />
+{% endblock %}
+
+{% block container %}
+  <div class="top_half">
+    <h2>Restaurant Search</h2>
+  </div>
+  <div class="bottom_half">
+    <div class="search_container">
+      <div class="search_box">
+        <div class="location_div">
+          <label for="location">Location</label>
+          <input type="text" name="location" class="location_input" placeholder="Zipcode"/>
+        </div>
+        <div class="price_div">
+          <label for="price">Price</label>
+          <select name="price" id="price">
+            <option value="empty"></option>
+            <option value="$">$</option>
+            <option value="$$">$$</option>
+            <option value="$$$">$$$</option>
+            <option value="$$$$">$$$$</option>
+          </select>
+        </div>
+        <div class="rating_div">
+          <label for="rating">Rating</label>
+          <select name="rating" id="rating">
+            <option value="empty"></option>
+            <option value="one_star">1 star</option>
+            <option value="two_star">2 stars</option>
+            <option value="three_star">3 stars</option>
+            <option value="four_star">4 stars</option>
+            <option value="five_star">5 stars</option>
+          </select>
+        </div>
+        <div class="results_div">
+          <label for="results">Results</label>
+          <form name="results" action="" method="">
+            <input type="radio" name="results" /> <text>5</text>
+            <input type="radio" name="results" checked="yes" /> <text>10</text>
+            <input type="radio" name="results" /> <text>20</text>
+            </form>
+        </div>
+        <button>Search</button>
+        <text>Unless you are feeling</text><button>Lucky?</button>
+      </div>
+    </div>
+  </div>
+{% endblock %}
