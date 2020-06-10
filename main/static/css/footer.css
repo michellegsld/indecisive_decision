@@ -7,10 +7,9 @@ footer {
     text-align: center;
     height: 60px;
     width: 100%;
-    background-color: #2F6690;
 }
 
 .footer_text {
-    background-color: floralwhite;
+    color: black;
     padding: 5px;                   /* To not have text right against edges */
 }
