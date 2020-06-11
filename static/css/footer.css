@@ -9,7 +9,16 @@ footer {
     width: 100%;
 }
 
-.footer_text {
+.footer_text1 {
     color: black;
     padding: 5px;                   /* To not have text right against edges */
+}
+
+.footer_text2 {
+    display: none;
+}
+
+@media screen and (max-width: 530px) {
+    .footer_text1 { display: none;}
+    .footer_text2 { display: inline;}
 }
