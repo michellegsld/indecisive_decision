@@ -1,7 +1,8 @@
 html, body {
     height: 100%;
     width: 100%;
-    font-family: "Comic Sans MS";
+    font-family: "Lato";
+    font-size: 17px;
 }
 
 body {
@@ -9,6 +10,8 @@ body {
     padding: 0px;
     display: flex;
     flex-direction: column;
+    background: rgb(39,15,54);
+    background: linear-gradient(0deg, rgba(39,15,54,0.8982260140384278) 0%, rgba(206,102,153,0.847805845971201) 73%); 
 }
 
 .container {
@@ -16,7 +19,6 @@ body {
     margin-bottom: 60px;        /* In order to not include footer height within container */
     height: 100%;
     width: 100%;
-    background: #C9F0FF;
 }
 
 /* The Modal (background) */
