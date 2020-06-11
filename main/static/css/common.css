@@ -1,7 +1,8 @@
 html, body {
     height: 100%;
     width: 100%;
-    font-family: "Comic Sans MS";
+    font-family: "Lato";
+    font-size: 17px;
 }
 
 body {
@@ -9,8 +10,8 @@ body {
     padding: 0px;
     display: flex;
     flex-direction: column;
-    background: rgb(21,228,255);
-    background: linear-gradient(180deg, rgba(21,228,255,1) 0%, rgba(47,102,144,1) 100%); 
+    background: rgb(39,15,54);
+    background: linear-gradient(0deg, rgba(39,15,54,0.8982260140384278) 0%, rgba(206,102,153,0.847805845971201) 73%); 
 }
 
 .container {
