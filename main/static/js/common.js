@@ -16,14 +16,20 @@ window.onload = () => {
   // To shorten code, refers to modal
   var modal = document.getElementById('modal');
 
-  //Display modal when "Log In/Sign Up" is clicked on
+  // Display modal when "Log In/Sign Up" is clicked on
   $('.login_signup_text').click(function () { modal.style.display = 'flex'; });
 
-  //Hide modal when the 'x' is clicked on the modal
+  // Hide modal when the 'x' is clicked on the modal
   $('span').click(function () { modal.style.display = 'none'; });
 
-  //Hide modal when clicked on window outside of it
+  // Hide modal when clicked on window outside of it
   window.onclick = function (event) {
     if (event.target === modal) { modal.style.display = 'none'; }
   };
+
+  // Clear search filter options in restaurant_search
+  $("#price")[0].selectedIndex = 0;
+  $("#rating")[0].selectedIndex = 0;
+  $("#result10").prop('checked', true);
+  $("#location_input").val('');
 };
