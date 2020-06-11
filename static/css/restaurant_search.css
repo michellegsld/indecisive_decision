@@ -33,13 +33,14 @@
     min-width: 300px; /* Could be more or less, depending on screen size */
     width: auto;
     height: 80%;
+    border-radius: 8px;
 }
 
 .search_box {                       /* Inner-most box */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: #ff729f;
+    background-color: #ff80a9;
     padding: 5px;
     border: 1px solid #888;
     width: 90%; /* Could be more or less, depending on screen size */
@@ -79,6 +80,7 @@
     margin-top: 0px;
     margin-right: 20px;
     border-radius: 20px;
+    background: floralwhite;
 }
 
 .results_div text {     /* Adds space after numbers (for spacing) */
