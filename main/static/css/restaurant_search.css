@@ -33,6 +33,7 @@
     min-width: 300px; /* Could be more or less, depending on screen size */
     width: auto;
     height: 80%;
+    border-radius: 8px;
 }
 
 .search_box {                       /* Inner-most box */
