@@ -14,7 +14,7 @@ from main.serializers import UserSerializer, IngredientSerializer, RecipesSerial
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
-    
+
     @decorators.action(methods=['get'], detail=True, url_path='get_reipes', url_name='get-recipes')
     def user_recipes(self, request, pk=None):
         recpies = {}
@@ -23,15 +23,16 @@ class UserViewSet(viewsets.ModelViewSet):
             recpies[entry.id] = entry
         return Response(recipes)
 
+
 class IngredientViewSet(viewsets.ModelViewSet):
     queryset = models.Ingredient.objects.all().order_by('-id')
     serializer_class = IngredientSerializer
-    
- 
+
+
 class RecipesViewSet(viewsets.ModelViewSet):
     queryset = models.Recipes.objects.all().order_by('-id')
     serializer_class = RecipesSerializer
-    
+
     @decorators.action(methods=['get'], detail=True, url_path='get_ingredients', url_name='get-ingredients')
     def recipe_ingredients(self, request, pk=None):
         ingredient_names = {}
@@ -40,13 +41,15 @@ class RecipesViewSet(viewsets.ModelViewSet):
             ingredient_names[entry.id] = entry.name
         return Response(ingredient_names)
 
+
 def index(response):
     return render(response, 'index.html')
+
 
 def restaurant_search(response):
     return render(response, 'restaurant_search.html')
 
-@login_required
+
 def api_query(response, location, rating, price="1,2,3,4"):
     API_KEY = "3ITPjXB1GPOj78Fag-o0LLQv2nOt7gmQWNjDJxqo7RK-HYmwVTyzm7F0MK7-Z6sPFmyaiEH5sgfU6JkrH4nNV06JHFTJ7GSPFlj7CdSDx12qPtaezp0-x01xJ9G9XnYx"
     get_total = requests.get("https://api.yelp.com/v3/businesses/search", headers={"Authorization": "Bearer " + API_KEY}, params={'location': location, 'price': price, 'categories': 'restaurants,All', 'limit': 50})
