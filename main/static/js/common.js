@@ -26,4 +26,9 @@ window.onload = () => {
   window.onclick = function (event) {
     if (event.target === modal) { modal.style.display = 'none'; }
   };
+
+  $("#price")[0].selectedIndex = 0;
+  $("#rating")[0].selectedIndex = 0;
+  $("#result10").prop('checked', true);
+  $("#location_input").val('');
 };
