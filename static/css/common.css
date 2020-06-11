@@ -3,6 +3,16 @@ html, body {
     width: 100%;
     font-family: "Lato";
     font-size: 17px;
+    position:relative;
+    margin:0;
+    padding:0;
+    overflow:auto;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    opacity: 0;
 }
 
 body {
@@ -11,7 +21,9 @@ body {
     display: flex;
     flex-direction: column;
     background: rgb(39,15,54);
-    background: linear-gradient(0deg, rgba(65,25,87,0.8590103277639181) 0%, rgba(206,102,153,0.847805845971201) 73%); 
+    background: linear-gradient(0deg, rgba(65,25,87,0.8590103277639181) 0%, rgba(206,102,153,0.847805845971201) 73%);
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 .container {
@@ -19,6 +31,7 @@ body {
     margin-bottom: 60px;        /* In order to not include footer height within container */
     height: 100%;
     width: 100%;
+
 }
 
 /* The Modal (background) */
@@ -49,7 +62,7 @@ body {
     width: 75%;
     max-width: 700px;
     height: auto;
-
+    border-radius: 8px;
 }
 
 .modal_box {
