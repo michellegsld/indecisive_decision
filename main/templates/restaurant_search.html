@@ -15,7 +15,7 @@
       <div class="search_box">
         <div class="location_div">
           <label for="location">Location</label>
-          <input type="text" name="location" class="location_input" placeholder="Zipcode (Required)"/>
+          <input type="text" name="location" class="location_input" id="location_input" placeholder="Zipcode (Required)"/>
         </div>
         <div class="price_div">
           <label for="price">Price</label>
@@ -41,9 +41,9 @@
         <div class="results_div">
           <label for="results">Results</label>
           <form name="results" action="" method="">
-            <input type="radio" name="results" /> <text>5</text>
-            <input type="radio" name="results" checked="yes" /> <text>10</text>
-            <input type="radio" name="results" /> <text>20</text>
+            <input type="radio" name="results" id="result5" /> <text>5</text>
+            <input type="radio" name="results" id="result10" checked="yes" /> <text>10</text>
+            <input type="radio" name="results" id="result20"/> <text>20</text>
             </form>
             <button id="region_search">Search</button>
         </div>

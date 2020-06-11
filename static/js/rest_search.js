@@ -21,7 +21,6 @@ $(document).ready(() => {
       headers: {"Access-Control-Allow-Origin": "*"},
       url: 'http://127.0.0.1:8000/api_query/' + location + '/' + rating + '/' + price + '/',
       type: 'GET',
-      crossDomain: true,
       dataType: 'json',
       success: function (data) {
         console.log(data)
