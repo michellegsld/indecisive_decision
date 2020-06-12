@@ -18,7 +18,7 @@ $(document).ready(() => {
     let location = $('INPUT.location_input').val().replace(" ", "_")
 
     $.ajax({
-      url: 'http://indecisivedecision-env.eba-xrwsyuw3.us-west-2.elasticbeanstalk.com/api_query/' + location + '/' + rating + '/' + price + '/',
+      url: 'http://127.0.0.1:8000/api_query/' + location + '/' + rating + '/' + price + '/',
       type: 'GET',
       dataType: 'json',
       success: function (data) {

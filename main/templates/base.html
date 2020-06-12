@@ -23,26 +23,26 @@
         </div>
       </div>
       <div class="right_half">
-        <text class="login_signup_text">
-          More Info
+
+    {% if user.is_authenticated %}
+    <li><a href="/profile/">{{ user }}</a></li>
+    <li>
+        <form style="margin:0;" action='/logout/' method="POST">
+        {% csrf_token %}
+            <input type="submit" value="Logout" class="btn btn-link" style="color:#777777;" /></li>
+            <input type="hidden" name="next" value="{{ current_path }}" />
+        </form>
+    </li>
+  </div>
+</header>
+    {% else %}
+               <text class="login_signup_text">
+          Log In/Sign Up
         </text>
       </div>
     </header>
-    <div id="modal" class="modal">
-      <div class="modal_container">
-        <div class="modal_box">
-          <span class="close">&times;</span>
-          <div class="modal_text">
-            <h2>Indecisive Decision</h2>
-            <br>
-            <h4>An application to help the indecisive decide.</h4>
-            <p>Hello! Welcome to our website. The purpose of this application is to help get rid of your indecision reguarding a particular subject. For our MVP, we have particularly completed the restaurant decider.</p>
-            <p>All that is required for this decider is your location, but you may optionally input the price and rating. Then select the amount of results you'd like to choose from and hit "Roll" for a random selection of what's in your area. You may alternatively select "Feeling Lucky?" for a single result.</p>
-            <p>If it's difficult to select from the amount provided, you may remove what you don't like and click "Narrow" to randomly remove some selections.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+      {% endif %}
+     </div>
     <div class="container">
       {% block container %}
       {% endblock %}
