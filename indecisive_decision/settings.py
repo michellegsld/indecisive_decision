@@ -68,7 +68,6 @@ TEMPLATES = [
     },
 ]
 
-CORS_ORIGIN_ALLOW_ALL = True
 WSGI_APPLICATION = 'indecisive_decision.wsgi.application'
 
 
