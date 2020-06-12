@@ -3,6 +3,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom:0px;
+}
+
+.popup {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+    padding: 0 10px;
+    max-width: 60%;
+    border: 2px solid #444;
+    background: floralwhite;
+}
+
+.popup h2 {
+    margin-bottom: 0px;
 }
 
 .top_half {                 /* Holds "Restaurant Search */
@@ -33,6 +51,7 @@
     width: 300px;
     height: 350px;
     border-radius: 8px;
+    margin: 10px;
 }
 
 .search_box {                       /* Inner-most box */
@@ -92,9 +111,17 @@
     background: floralwhite;
 }
 
-.restaurant_result { 
+.second_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.restaurant_result {
+    display: flex;
     height: auto;
 }
+
 
 @media screen and (max-width: 530px) {
 
