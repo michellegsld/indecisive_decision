@@ -7,15 +7,20 @@ footer {
     text-align: center;
     height: 60px;
     width: 100%;
+    padding-top: 10px;
 }
 
 .footer_text1 {
     color: black;
     padding: 5px;                   /* To not have text right against edges */
+    padding-bottom: 10px;
 }
 
 .footer_text2 {
     display: none;
+    color: black;
+    padding: 5px;                   /* To not have text right against edges */
+    padding-bottom: 10px;
 }
 
 @media screen and (max-width: 530px) {
