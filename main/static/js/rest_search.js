@@ -22,13 +22,19 @@ $(document).ready(() => {
       type: 'GET',
       dataType: 'json',
       success: function (data) {
-        console.log(data)
-        const location = data.businesses[0].location
-        const address = [location.address1, location.city, location.state, location.zip_code].join(" ");
-        console.log(location);
-        console.log(data.businesses[0].name)
-        //$('DIV#test').html("<h1>" + data.businesses[0].name + "</h1> <img src='" + data.businesses[0].image_url + "' width='500px' height='600px'>" +
-        //"<h2>" + address + "</h2> <h3>" + data.businesses[0].rating + "</h3>")
+        //console.log(data)
+        //const location = data.businesses[0].location
+        //const address = [location.address1, location.city, location.state, location.zip_code].join(" ");
+        //console.log(location);
+        //console.log(data.businesses[0].name);
+        if (data["total"] > 0) {
+          for (const item of data) {
+            populateSearchResult(item);
+          }
+         } else {
+          $('<article><h4><h4></article>').appendTo($('DIV.restaurant_result'));
+          $('.restaurant_result h4').append("Sorry! There is nothing currently open/available with those parameters.");
+         }
       }
     });
   });
