@@ -14,7 +14,7 @@ class Ingredient(models.Model):
 
 class Restaurant(models.Model):
      name = models.CharField(max_length=255)
-     rating = models.CharField(max_length=2, null=True)
+     rating = models.CharField(max_length=10, null=True)
      address = models.CharField(max_length=75, null=True)
      image_url = models.URLField(default='', null=True)
      price = models.CharField(max_length=6, null=True)

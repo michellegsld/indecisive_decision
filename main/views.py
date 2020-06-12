@@ -76,6 +76,36 @@ def api_query(response, location, rating, price="1,2,3,4"):
     return JsonResponse(new_dict)
 
 
+def save_favorite(request, uid, rest_id):
+
+    if request.user.is_authenticated:
+        uid = request.user.id
+        API_KEY = "3ITPjXB1GPOj78Fag-o0LLQv2nOt7gmQWNjDJxqo7RK-HYmwVTyzm7F0MK7-Z6sPFmyaiEH5sgfU6JkrH4nNV06JHFTJ7GSPFlj7CdSDx12qPtaezp0-x01xJ9G9XnYx"
+        get_business = requests.get("https://api.yelp.com/v3/businesses/" + rest_id, headers={"Authorization": "Bearer " + API_KEY})
+        favorite_restaurant = get_business.json()
+
+        try:
+            c_user = User.objects.get(pk=uid)
+        except User.DoesNotExist:
+            return JsonResponse({"error": "Failed to add: User does not exist"})
+
+        new_favorite = models.Restaurant(name=favorite_restaurant["name"])
+    
+        joined_address = " "
+        joined_address = joined_address.join(favorite_restaurant["location"]['display_address'])
+
+        new_favorite.address = joined_address
+        new_favorite.image_url = favorite_restaurant["image_url"]
+        new_favorite.rating = favorite_restaurant["rating"]
+        new_favorite.price = favorite_restaurant["price"]
+        new_favorite.save()
+
+        c_user.profile.favorites.add(new_favorite)
+        c_user.save()
+        return JsonResponse({"status": "success"})
+    else:
+        return JsonReponse({"error": "Can't add favorite to anonymous user"})
+
 #Authentication
 
 def LoginRequest(request):
