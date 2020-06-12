@@ -92,6 +92,10 @@
     background: floralwhite;
 }
 
+.restaurant_result { 
+    height: auto;
+}
+
 @media screen and (max-width: 530px) {
 
 }
