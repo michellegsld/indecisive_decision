@@ -7,6 +7,14 @@
 {% endblock %}
 
 {% block container %}
+  <div id="popup1" class="popup">
+    <h2>ERROR</h2>
+    <p>Hey! There seems to be an error with the location you inputted, please double check and try again!</p>
+  </div>
+  <div id="popup2" class="popup">
+    <h2>ERROR</h2>
+    <p>Sorry! There is nothing currently open/available with those parameters.</p>
+  </div>
   <div class="top_half">
     <h2>Restaurant Decider</h2>
   </div>
@@ -15,7 +23,7 @@
       <div class="search_box">
         <div class="location_div">
           <label for="location">Location</label>
-          <input type="text" name="location" class="location_input" id="location_input" placeholder="Zipcode (Required)"/>
+          <input type="text" name="location" class="location_input" id="location_input" placeholder=" Required"/>
         </div>
         <div class="price_div">
           <label for="price">Price</label>
@@ -40,14 +48,14 @@
         </div>
         <div class="results_div">
           <label for="results">Results</label>
-          <form name="results" action="" method="">
-            <input type="radio" name="results" id="result5" /> <text>5</text>
-            <input type="radio" name="results" id="result10" checked="yes" /> <text>10</text>
-            <input type="radio" name="results" id="result20"/> <text>20</text>
+          <form id="total_roll" name="results" action="" method="">
+            <input type="radio" name="results" id="5" /> <text>5</text>
+            <input type="radio" name="results" id="10" checked="yes" /> <text>10</text>
+            <input type="radio" name="results" id="20"/> <text>20</text>
             </form>
-            <button id="region_search">Roll</button>
+            <button name="roll" id="region_search">Roll</button>
         </div>
-        <button>Feeling Lucky?</button>
+        <button name="lucky" id="region_search">Feeling Lucky?</button>
       </div>
     </div>
   </div>
@@ -55,5 +63,22 @@
 
 {% block second_container %}
   <div class="restaurant_result">
+<!--    <article class="single_result">
+      <div class="restaurant_name">
+        <h2></h2>
+        <div class="restaurant_rating">**</div>
+      </div>
+      <div class="restaurant_img">
+      </div>
+      <div class="restaurant_info">
+        <div class="restaurant_location"> address</div>
+        <div class="restaurant_phone"> number</div>
+        <div class="restaurant_categories"> categories</div>
+      </div>
+      <div class="restaurant_footer">
+        <div class="restaurant_price">$</div>
+        <div class="yelp_logo"></div>
+      </div>
+    </article> -->
   </div>
 {% endblock %}
