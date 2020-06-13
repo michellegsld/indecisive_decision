@@ -1,12 +1,21 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block head_inherit %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}" />
+{% endblock %}
+
+
 
 {% block container %}
     <div class="container_login">
+		<div class="form_box_login"
         <form method="POST">
         {% csrf_token %}
         {{form.as_p}}
-            <button style="background-color:#F4EB16; color:blue" class="btn btn-outline-info" type="submit">Login</button>
+            <button class="btn btn-outline-info" type="submit">Login</button>
         </form>
-        Don't have an account? <a href="/register" target="blank"><strong>register here</strong></a>!
+		Don't have an account? <a href="/register" target="blank"><strong>register here</strong></a>!
+	</div>
     </div>>
 {% endblock %}}
