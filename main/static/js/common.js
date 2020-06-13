@@ -27,9 +27,10 @@ window.onload = () => {
     if (event.target === modal) { modal.style.display = 'none'; }
   };
 
-  // Clear search filter options in restaurant_search
-  $("#price")[0].selectedIndex = 0;
-  $("#rating")[0].selectedIndex = 0;
-  $("#result10").prop('checked', true);
-  $("#location_input").val('');
+  // Clear/reset search filter options in restaurant_search
+  $('#price')[0].selectedIndex = 0;
+  $('#rating')[0].selectedIndex = 0;
+  $('#10').prop('checked', true);
+  $('#location_input').val('');
+  $('#roll').text('Roll');
 };
