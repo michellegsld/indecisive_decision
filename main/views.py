@@ -79,7 +79,7 @@ def api_query(response, location, rating, price="1,2,3,4"):
     return JsonResponse(new_dict)
 
 
-def save_favorite(request, uid, rest_id):
+def save_favorite(request, rest_id):
 
     if request.user.is_authenticated:
         uid = request.user.id

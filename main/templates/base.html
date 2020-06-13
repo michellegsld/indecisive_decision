@@ -42,20 +42,25 @@
           </div>
         </div>
     {% if user.is_authenticated %}
-        <li><a href="/profile/">{{ user }}</a></li>
-        <li>
+        <p>
+          <form style="margin:0;" action='/profile/' method="GET">
+                <input type="submit" value="{{ user }}" class="account_button"/>
+            </form>
             <form style="margin:0;" action='/logout/' method="POST">
             {% csrf_token %}
-                <input type="submit" value="Logout" class="btn btn-link" style="color:#777777;" /></li>
-                <input type="hidden" name="next" value="{{ current_path }}" />
+                <input type="submit" value="Logout" class="account_button"/>
+                <input type="hidden" name="next" value="{{ current_path }}"/>
             </form>
-        </li>
+        </p>
       </div>
     </header>
     {% else %}
-        <a href="/register/"> <text class="login_signup">
-          Log In/Sign Up
-        </text> </a>
+    <a href="/login/"> <button class="account_button">
+      Login
+    </button> </a>
+      <a href="/register/"> <button class="account_button">
+          Register
+        </button> </a>
       </div>
     </header>
     {% endif %}
