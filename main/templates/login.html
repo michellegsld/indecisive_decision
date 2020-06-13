@@ -9,7 +9,7 @@
 
 {% block container %}
     <div class="container_login">
-		<div class="form_box_login"
+		<div class="form_box_login">
         <form method="POST">
         {% csrf_token %}
         {{form.as_p}}
@@ -17,5 +17,5 @@
         </form>
 		Don't have an account? <a href="/register" target="blank"><strong>register here</strong></a>!
 	</div>
-    </div>>
+    </div>
 {% endblock %}}
