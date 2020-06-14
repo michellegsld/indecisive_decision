@@ -16,7 +16,7 @@ header .left_half {
     height: 100%;
     margin-left: 3%;            /* To not have text right against edge */
     display: flex;
-    flex: 3;
+    flex: 1;
     justify-content: flex-start;/* Horizontal (text) */
     align-items: center;        /* Vertical  (text) */
 }
@@ -32,6 +32,24 @@ header .right_half {
 
 .header_left_text {
     padding: 5px;               /* To not have text right against edges */
+}
+
+.account_button {
+    background-color: #FF8FB3;
+    border: none;
+    color: black;
+    padding: 9px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px;
+    border-radius: 10px;;
+    transition-duration: 0.3s;
+}
+
+.account_button:hover {
+    background-color: pink
 }
 
 .login_signup_text {

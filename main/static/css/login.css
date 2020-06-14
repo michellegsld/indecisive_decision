@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: center;
+	background-color: #0d5b822e;
+}
+
+.container_login {
+	padding: 20px;
+	background: white;
+	border-radius: 10px;
+}
+
+.form_box_login {
+	background-color: pink;
+	padding: 20px;
+}
+
+.helptext {
+	display: none;
+}
