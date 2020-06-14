@@ -60,10 +60,14 @@ $(document).ready(() => {
       newArt.append(resultTemplate);
       let id = '#' + place['id'];
 
-      $(id + ' DIV.restaurant_name H2').text(place["name"]);
+      $(id + ' DIV.restaurant_name H2').text(place["name"]);    // Restaurant Name
 
+      // Star rating image
       starImage = '/static/img/yelp_stars/web_and_ios/small/' + ratingImage(place['rating']);
       $(id + ' DIV.restaurant_rating').append('<img src="' + starImage + '" alt="Yelp Star Rating">');
+
+      //Restaurant Image
+      $(id + ' DIV.restaurant_img').append('<img src="' + place['image_url'] + '" alt="Restaurant Image">');
 
       //const location = data.businesses[0].location
       //const address = [location.address1, location.address2, location.address3, location.city, location.state, location.zip_code].join(" ");
