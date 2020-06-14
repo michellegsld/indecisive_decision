@@ -1,5 +1,5 @@
 footer {
-    position: relative;             /* Window re-size doesn't affect appearance */
+    position: absolute;             /* Window re-size doesn't affect appearance */
     bottom: 0px;                    /* Keeps footer at bottom of page */
     display: flex;
     justify-content: center;
