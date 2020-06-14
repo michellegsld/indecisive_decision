@@ -17,17 +17,29 @@
   <body>
     <header>
       <div class="left_half">
-        <img src="{% static 'img/logo_dark.png' %}" alt="The Infinite Question">
+        <a href="/"><img src="{% static 'img/logo_dark.png' %}" alt="The Infinite Question"> </a>
         <div class="header_left_text">
           <!--*random message*-->
         </div>
       </div>
       <div class="right_half">
-        <text class="login_signup_text">
+       <text class="login_signup_text">
           More Info
         </text>
+    {% if user.is_authenticated %}
+        <p>
+          <form style="margin:0;" action='/profile/' method="GET">
+                <input type="submit" value="{{ user }}" class="account_button"/>
+            </form>
+            <form style="margin:0;" action='/logout/' method="POST">
+            {% csrf_token %}
+                <input type="submit" value="Logout" class="account_button"/>
+                <input type="hidden" name="next" value="{{ current_path }}"/>
+            </form>
+        </p>
       </div>
     </header>
+    {% else %}
     <div id="modal" class="modal">
       <div class="modal_container">
         <div class="modal_box">
@@ -38,6 +50,16 @@
           </div>
         </div>
       </div>
+    </div>
+    <a href="/login/"> <button class="account_button">
+      Login
+    </button> </a>
+      <a href="/register/"> <button class="account_button">
+          Register
+        </button> </a>
+      </div>
+    </header>
+    {% endif %}
     </div>
     <div class="containers">
       <div class="first_container">
