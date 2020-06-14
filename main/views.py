@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseRedirect
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+from django.forms.models import model_to_dict
 from django.contrib import messages
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from main.serializers import UserSerializer, IngredientSerializer, RecipesSerializer, RestaurantSerializer
@@ -47,6 +48,11 @@ class RecipesViewSet(viewsets.ModelViewSet):
         for entry in recipe.ingredients.all():
             ingredient_names[entry.id] = entry.name
         return Response(ingredient_names)
+
+def profile(response):
+    user = response.user
+    favorites = user.profile.favorites.values()
+    return render(response, "profile.html", {"favorites": favorites})
 
 def index(response):
     return render(response, 'index.html')
@@ -96,7 +102,8 @@ def save_favorite(request, rest_id):
     
         joined_address = " "
         joined_address = joined_address.join(favorite_restaurant["location"]['display_address'])
-
+        
+        new_favorite.id = favorite_restaurant["id"]
         new_favorite.address = joined_address
         new_favorite.image_url = favorite_restaurant["image_url"]
         new_favorite.rating = favorite_restaurant["rating"]
@@ -108,6 +115,22 @@ def save_favorite(request, rest_id):
         return JsonResponse({"status": "success"})
     else:
         return JsonReponse({"error": "Can't add favorite to anonymous user"})
+    
+def delete_favorite(request, rest_id):
+    if request.user.is_authenticated:
+        uid = request.user.id
+        try:
+            c_user = User.objects.get(pk=uid)
+        except User.DoesNotExist:
+            return JsonResponse({"error": "Failed to add: User does not exist"})
+        
+        c_user.profile.favorites.remove(models.Restaurant.objects.get(pk=rest_id))
+        c_user.profile.save()
+        c_user.save()
+        return JsonResponse({"success": "favorite deleted"})
+    else:
+        return JsonResponse({"error": "no user"})
+            
 
 #Authentication
 
@@ -151,10 +174,7 @@ def RegisterView(request):
                 print(msg)
                 messages.error(request, f"{msg}: {form.error_messages[msg]}")
 
-            return render(request = request,
-                          template_name = "register.html",
-                          context={"form":form})
+            return render(request = request, template_name = "register.html", context={"form":form})
+
     form = UserCreationForm
-    return render(request = request,
-                  template_name = "register.html",
-                  context={"form":form})
+    return render(request = request, template_name = "register.html", context={"form":form})

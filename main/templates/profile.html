@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_inherit %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}" />
+{% endblock %}
+
+{% block container %}
+	<div class="profile_body">
+		<div class='profile_top'>
+			<h1>{{ user }}</h1>
+		</div>
+	</div>
+{% endblock %}
+
+{% block second_container %}
+	<div class="profile_body">
+		<section class="profile_bottom">
+			{% for favorite in favorites %}
+				<div class="favorites_object">
+					<div class="inner_border">
+						<text class="favorite_name">{{ favorite.name }} </text>  
+						<img class="rest_img" src="{{ favorite.image_url }}" width="500" height="500px">
+						<text class="favorite_address">{{favorite.address }}</text> 
+						<text class="favorite_rating">{{ favorite.rating }}</text>
+						<text class="favorite_price">{{ favorite.price }}</text>
+						<div class="delete_div{{favorite.id}}"><button id="{{ favorite.id }}" class="delete_favorite"> Delete Favorite </button></div>
+					</div>
+				</div>
+			{% endfor %}
+		<section>
+	</div>
+	<script> 
+		$('button.delete_favorite').click( function () {
+			$.ajax({
+     		url: 'http://127.0.0.1:8000/delete_favorite/' + $('button.delete_favorite').attr('id'),
+      		type: 'GET',
+      		dataType: 'json',
+			success: function (data) {
+					 $('div.delete_div' + $('button.delete_favorite').attr('id')).text("Deleted")
+				}
+			});
+		});
+	</script>
+{% endblock %}

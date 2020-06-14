@@ -24,9 +24,6 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     favorites = models.ManyToManyField(Restaurant, related_name='favorited_by', blank=True)
 
-    def __str__(self):
-        return self.name
-    
 @receiver(post_save, sender=User)
 def create_user_profile(sender, instance, created, **kwargs):
     if created:
