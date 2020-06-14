@@ -24,7 +24,7 @@
 						<text class="favorite_address">{{favorite.address }}</text> 
 						<text class="favorite_rating">{{ favorite.rating }}</text>
 						<text class="favorite_price">{{ favorite.price }}</text>
-						<div class="delete_div{{favorite.id}}"><button id="{{ favorite.id }}" class="delete_favorite"> Delete Favorite </button></div>
+						<div class="delete_div{{favorite.rest_id}}"><button id="{{ favorite.rest_id }}" class="delete_favorite"> Delete Favorite </button></div>
 					</div>
 				</div>
 			{% endfor %}
@@ -32,12 +32,13 @@
 	</div>
 	<script> 
 		$('button.delete_favorite').click( function () {
+			const id = $(this).attr('id')
 			$.ajax({
-     		url: 'http://127.0.0.1:8000/delete_favorite/' + $('button.delete_favorite').attr('id'),
+     		url: 'http://127.0.0.1:8000/delete_favorite/' + id,
       		type: 'GET',
       		dataType: 'json',
 			success: function (data) {
-					 $('div.delete_div' + $('button.delete_favorite').attr('id')).text("Deleted")
+					 $('div.delete_div' + id).text("Deleted")
 				}
 			});
 		});

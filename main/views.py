@@ -105,7 +105,7 @@ def save_favorite(request, rest_id):
         joined_address = " "
         joined_address = joined_address.join(favorite_restaurant["location"]['display_address'])
         
-        new_favorite.id = favorite_restaurant["id"]
+        new_favorite.rest_id = favorite_restaurant["id"]
         new_favorite.address = joined_address
         new_favorite.image_url = favorite_restaurant["image_url"]
         new_favorite.rating = favorite_restaurant["rating"]
@@ -118,7 +118,7 @@ def save_favorite(request, rest_id):
     else:
         return JsonReponse({"error": "Can't add favorite to anonymous user"})
     
-def delete_favorite(request, rest_id):
+def delete_favorite(request, r_id):
     if request.user.is_authenticated:
         uid = request.user.id
         try:
@@ -126,7 +126,12 @@ def delete_favorite(request, rest_id):
         except User.DoesNotExist:
             return JsonResponse({"error": "Failed to add: User does not exist"})
         
-        c_user.profile.favorites.remove(models.Restaurant.objects.get(pk=rest_id))
+        for entry in c_user.profile.favorites.values():
+            if entry['rest_id'] == r_id:
+                delete = entry
+                print(delete['id'])
+        
+        c_user.profile.favorites.remove(models.Restaurant.objects.get(pk=delete['id']))
         c_user.profile.save()
         c_user.save()
         return JsonResponse({"success": "favorite deleted"})
