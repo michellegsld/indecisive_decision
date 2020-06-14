@@ -1,5 +1,5 @@
 footer {
-    position: absolute;             /* Window re-size doesn't affect appearance */
+    position: relative;             /* Window re-size doesn't affect appearance */
     bottom: 0px;                    /* Keeps footer at bottom of page */
     display: flex;
     justify-content: center;
@@ -7,9 +7,23 @@ footer {
     text-align: center;
     height: 60px;
     width: 100%;
+    padding-top: 30px;
 }
 
-.footer_text {
+.footer_text1 {
     color: black;
     padding: 5px;                   /* To not have text right against edges */
+    padding-bottom: 10px;
+}
+
+.footer_text2 {
+    display: none;
+    color: black;
+    padding: 5px;                   /* To not have text right against edges */
+    padding-bottom: 10px;
+}
+
+@media screen and (max-width: 530px) {
+    .footer_text1 { display: none;}
+    .footer_text2 { display: inline;}
 }

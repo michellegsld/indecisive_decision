@@ -23,7 +23,7 @@ class RestaurantViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
-    
+
     @decorators.action(methods=['get'], detail=True, url_path='get_reipes', url_name='get-recipes')
     def user_recipes(self, request, pk=None):
         recpies = {}
@@ -32,15 +32,16 @@ class UserViewSet(viewsets.ModelViewSet):
             recpies[entry.id] = entry
         return Response(recipes)
 
+
 class IngredientViewSet(viewsets.ModelViewSet):
     queryset = models.Ingredient.objects.all().order_by('-id')
     serializer_class = IngredientSerializer
-    
- 
+
+
 class RecipesViewSet(viewsets.ModelViewSet):
     queryset = models.Recipes.objects.all().order_by('-id')
     serializer_class = RecipesSerializer
-    
+
     @decorators.action(methods=['get'], detail=True, url_path='get_ingredients', url_name='get-ingredients')
     def recipe_ingredients(self, request, pk=None):
         ingredient_names = {}
@@ -54,8 +55,10 @@ def profile(response):
     favorites = user.profile.favorites.values()
     return render(response, "profile.html", {"favorites": favorites})
 
+
 def index(response):
     return render(response, 'index.html')
+
 
 def restaurant_search(response):
     return render(response, 'restaurant_search.html')
@@ -83,7 +86,6 @@ def api_query(response, location, rating, price="1,2,3,4"):
                 new_dict['total'] += 1
                 new_dict["businesses"].append(response_list.json()["businesses"][i])
     return JsonResponse(new_dict)
-
 
 def save_favorite(request, rest_id):
 

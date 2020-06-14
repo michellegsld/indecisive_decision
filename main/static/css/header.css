@@ -1,4 +1,4 @@
-img {
+.left_half img {
     width: 40px;
     height: 40px;
     margin-right: 10px;
@@ -9,6 +9,7 @@ header {
     display: flex;
     height: 75px;
     width: 100%;
+    padding-bottom: 10px;
 }
 
 header .left_half {
