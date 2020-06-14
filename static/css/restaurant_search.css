@@ -158,10 +158,15 @@
     margin: 0px;
 }
 
-.restaurant_rating img{
+.restaurant_rating img {
     width: auto;
     height: auto;
     margin-top: 15px;
+}
+
+.restaurant_img img {
+    max-width: 85%;
+    max-height: 250px;
 }
 
 
