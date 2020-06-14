@@ -1,13 +1,26 @@
 html, body {
     height: 100%;
-    min-height: 100%;
     width: 100%;
     font-family: "Lato";
     font-size: 17px;
     position:relative;
     margin:0;
     padding:0;
-    overflow:auto;
+}
+
+body {
+    height: auto;
+    min-height: 100%;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(39,15,54);
+    background: linear-gradient(295deg, rgba(65,25,87,0.8590103277639181) 0%, rgba(206,102,153,0.847805845971201) 73%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    overflow-y: scroll;
 }
 
 body::-webkit-scrollbar {
@@ -16,22 +29,21 @@ body::-webkit-scrollbar {
     opacity: 0;
 }
 
-body {
-    margin: 0px;
-    padding: 0px;
-    display: flex;
-    flex-direction: column;
-    background: rgb(39,15,54);
-    background: linear-gradient(295deg, rgba(65,25,87,0.8590103277639181) 0%, rgba(206,102,153,0.847805845971201) 73%);
-    overflow: hidden;
-    overflow-y: scroll;
-}
-
-.container {
+.containers {
     margin-top: 75px;           /* In order to not include header height within container */
     margin-bottom: 60px;        /* In order to not include footer height within container */
-    height: 100%;
     width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.first_container {
+    flex: 1;
+}
+
+.second_container {
+    flex: 1;
 }
 
 /* The Modal (background) */

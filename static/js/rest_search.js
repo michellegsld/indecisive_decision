@@ -19,6 +19,7 @@ $(document).ready(() => {
 
   //If the user has clicked "Roll" or "Feeling Lucky?", start search
   $('button#region_search').click( (obj) => {
+    document.getElementsByClassName('second_container')[0].style.display = 'none'; // Hide second container until know what to display
     document.getElementById('popup1').style.display = 'none'; // Make sure error message is hidden
     document.getElementById('popup2').style.display = 'none'; // Make sure error message is hidden
     $('SECTION.restaurant_result').empty(); // Empty section in order to provide new results on button click
@@ -45,6 +46,7 @@ $(document).ready(() => {
           for (place of result) {  // Then for each buisness left
             populateSearchResult(place); // populate and display them
           }
+          document.getElementsByClassName('second_container')[0].style.display = 'flex'; // Display second_container on results filled
          } else {  // Error on the fact that no buisnesses were returned from query
           document.getElementById('popup2').style.display = 'flex';
          }
