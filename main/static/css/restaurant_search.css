@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -113,6 +114,7 @@
 
 .second_container {
     display: flex;
+    flex: 1;
     align-items: center;
     justify-content: center;
 }
@@ -143,11 +145,23 @@
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: #ff8fb3 ;
+    align-items: center;
+    text-align: center;
+    background-color: #bd7cbd ;
     padding: 5px;
     border: 1px solid #888;
     width: 90%;
     height: 90%;
+}
+
+.restaurant_name h2 {
+    margin: 0px;
+}
+
+.restaurant_rating img{
+    width: auto;
+    height: auto;
+    margin-top: 15px;
 }
 
 
