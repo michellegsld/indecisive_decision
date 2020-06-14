@@ -1,6 +1,6 @@
-const resultTemplate = '<div class="result_box"><div class="restaurant_name"><h2></h2><div class="restaurant_rating">**</div></div><div class="restaurant_img"></div><div class="restaurant_info"><div class="restaurant_location"> address</div><div class="restaurant_phone"> number</div><div class="restaurant_categories"> categories</div></div><div class="restaurant_footer"><div class="restaurant_price"></div><div class="yelp_logo"></div></div></div>'
-let price = "1,2,3,4"
-let rating = "1"
+const resultTemplate = '<div class="result_box"><div class="restaurant_name"><h2></h2><div class="restaurant_rating"></div></div><div class="restaurant_img"></div><div class="restaurant_info"><div class="restaurant_location"></div><div class="restaurant_phone"></div><div class="restaurant_categories"></div></div><div class="restaurant_footer"><div class="restaurant_price"></div><div class="yelp_logo"></div></div></div>'
+let price = "1,2,3,4";
+let rating = "1";
 
 $(document).ready(() => {
   // Set price variable if pricing was specified
@@ -27,7 +27,7 @@ $(document).ready(() => {
     let location = $('INPUT.location_input').val().replace(" ", "_")
 
     $.ajax({
-      url: 'http://indecisivedecision.net/api_query/' + location + '/' + rating + '/' + price + '/',
+      url: '/api_query/' + location + '/' + rating + '/' + price + '/',
       type: 'GET',
       dataType: 'json',
       success: function (data) {
@@ -62,14 +62,23 @@ $(document).ready(() => {
 
       $(id + ' DIV.restaurant_name H2').text(place["name"]);
 
+      starImage = '/static/img/yelp_stars/web_and_ios/small/' + ratingImage(place['rating']);
+      $(id + ' DIV.restaurant_rating').append('<img src="' + starImage + '" alt="Yelp Star Rating">');
+
       //const location = data.businesses[0].location
       //const address = [location.address1, location.address2, location.address3, location.city, location.state, location.zip_code].join(" ");
       //console.log(address);
 
-      //$(id + ' H2').text(item);
-      //const newArt = $('<article></article>').appendTo($('.restaurant_result'));
-      //newArt.attr('id', item['id']);
-      //newArt.append(item['name']);
+    }
+
+    // Just returns which rating image to use
+    function ratingImage(rating) {
+     const starDict = {0: 'small_0@2x.png', 1: 'small_1@2x.png',
+                       1.5: 'small_1_half@2x.png', 2: 'small_2@2x.png',
+                       2.5: 'small_2_half@2x.png', 3: 'small_3@2x.png',
+                       3.5: 'small_3_half@2x.png', 4: 'small_4@2x.png',
+                       4.5: 'small_4_half@2x.png', 5: 'small_5@2x.png'};
+      return (starDict[rating]);
     }
   });
 });
