@@ -12,6 +12,13 @@
 	border-radius: 10px;
 }
 
+.first_container {
+	flex: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .form_box_login {
 	background-color: pink;
 	padding: 20px;
@@ -19,4 +26,8 @@
 
 .helptext {
 	display: none;
+}
+
+.containers {
+	flex: 1;
 }
