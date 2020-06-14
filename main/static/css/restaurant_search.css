@@ -1,4 +1,4 @@
-.container {
+.first_container {
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -115,6 +115,8 @@
 .second_container {
     display: flex;
     flex: 1;
+    width: 100%;
+    height: fit-content;
     align-items: center;
     justify-content: center;
 }
