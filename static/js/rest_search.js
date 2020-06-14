@@ -91,20 +91,26 @@ $(document).ready(() => {
   $('.restaurant_result').on('click', 'button.favorite', function () {
     let id = $(this).parent().parent().parent().attr('id')
     $(this).addClass('favorited').removeClass('favorite')
+    let message;
     $.ajax({
+      async: false,
       url: '/save_favorite/' + id + '/',
       type: 'GET',
       datatype: 'json',
       success: function (data) {
-        if ('error' in data) {
-          alert("Please login before adding favorites")
-        } else {
-          
-          alert("Favorite Added")
+          if ('error' in data) {
+            message = 0
+            alert("Please login before adding favorites")
+          } else { 
+            message = 1
+            alert("Favorite Added")
+            
+          }
         }
-      }
-    });
-  });
+      });
+    console.log(message)
+    if (message === 0) {$(this).addClass('favorite').removeClass('favorited')};
+      }); 
 
     $('.restaurant_result').on('click', 'button.favorited', function () {
       let id = $(this).parent().parent().parent().attr('id')

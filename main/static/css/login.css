@@ -7,9 +7,10 @@
 }
 
 .container_login {
-	padding: 20px;
-	background: white;
-	border-radius: 10px;
+	background: #fefefe;
+	border-radius: 8px;
+	border: 1px solid #888;
+	padding: 10px;;
 }
 
 .first_container {
@@ -20,8 +21,9 @@
 }
 
 .form_box_login {
-	background-color: pink;
-	padding: 20px;
+	background-color: #ff8fb3;
+	border: 1px solid #888;
+	padding: 12px;
 }
 
 .helptext {
