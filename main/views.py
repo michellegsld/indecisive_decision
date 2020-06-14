@@ -116,7 +116,7 @@ def save_favorite(request, rest_id):
         c_user.save()
         return JsonResponse({"status": "success"})
     else:
-        return JsonReponse({"error": "Can't add favorite to anonymous user"})
+        return JsonResponse({"error": "Can't add favorite to anonymous user"})
     
 def delete_favorite(request, r_id):
     if request.user.is_authenticated:
