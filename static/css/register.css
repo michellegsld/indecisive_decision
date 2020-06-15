@@ -1,0 +1,28 @@
+.containers {
+    flex: 3;
+}
+
+.first_container {
+	flex: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container_register {
+	padding: 10px;
+	background: #fefefe;
+	border-radius: 8px;
+	border: 1px solid #888;
+}
+
+.form_box_register {
+	background-color: #ff8fb3;
+	padding: 12px;
+	border: 1px solid #888;;
+}
+
+.helptext {
+	display: none;
+}
+

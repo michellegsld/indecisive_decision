@@ -1,4 +1,4 @@
-const resultTemplate = '<div class="result_box"><div class="restaurant_name"><h2></h2><div class="restaurant_rating"></div></div><div class="restaurant_img"></div><div class="restaurant_address"></div><div class="restaurant_phone"></div><div class="restaurant_categories"></div><div class="restaurant_footer"><div class="restaurant_price"></div><div class="yelp_logo"></div></div></div>'
+const resultTemplate = '<div class="result_box"><div class="restaurant_name"><button class="favorite"></button><h2></h2><div class="restaurant_rating"></div></div><div class="restaurant_img"></div><div class="restaurant_info"><div class="restaurant_location"></div><div class="restaurant_phone"></div><div class="restaurant_categories"></div></div><div class="restaurant_footer"><div class="restaurant_price"></div><div class="yelp_logo"></div></div></div>'
 let price = "1,2,3,4";
 let rating = "1";
 
@@ -105,5 +105,46 @@ $(document).ready(() => {
                        4.5: 'small_4_half@2x.png', 5: 'small_5@2x.png'};
       return (starDict[rating]);
     }
+  });  
+
+  $('.restaurant_result').on('click', 'button.favorite', function () {
+    let id = $(this).parent().parent().parent().attr('id')
+    $(this).addClass('favorited').removeClass('favorite')
+    let message;
+    $.ajax({
+      async: false,
+      url: '/save_favorite/' + id + '/',
+      type: 'GET',
+      datatype: 'json',
+      success: function (data) {
+          if ('error' in data) {
+            message = 0
+            alert("Please login before adding favorites")
+          } else { 
+            message = 1
+            alert("Favorite Added")
+            
+          }
+        }
+      });
+    console.log(message)
+    if (message === 0) {$(this).addClass('favorite').removeClass('favorited')};
+      }); 
+
+    $('.restaurant_result').on('click', 'button.favorited', function () {
+      let id = $(this).parent().parent().parent().attr('id')
+      $(this).addClass('favorite').removeClass('favorited')
+      $.ajax({
+        url: '/delete_favorite/' + id + '/',
+        type: 'GET',
+        datatype: 'json',
+        success: function (data) {
+          if ('error' in data) {
+            alert("Please login before removing")
+          } else {
+            alert("Favorite Removed")
+          }
+        }
+      });
   });
 });
