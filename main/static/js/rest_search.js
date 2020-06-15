@@ -28,7 +28,7 @@ $(document).ready(() => {
     let location = $('INPUT.location_input').val().replace(" ", "_")
 
     $.ajax({
-      url: '/api_query/' + location + '/' + rating + '/' + price + '/',
+      url: 'http://indecisivedecision.net/api_query/' + location + '/' + rating + '/' + price + '/',
       type: 'GET',
       dataType: 'json',
       success: function (data) {
