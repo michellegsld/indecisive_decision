@@ -8,10 +8,43 @@ window.onload = () => {
     "No more waiting around!",
     "Decision time!",
     "Indecisive Decision",
-    "What would you like?"
+    "What would you like?",
+    "What do you mean it's the bread?",
+    "We have the decisions",
+    "Do you smell what the rock is cooking?",
+    "Happy Birthday Ezra!",
+    "It's a hard knock life",
+    "Is this a web app?",
+    "I can't believe it's not butter",
+    "Maybe it's maybelline",
+    "Gotta catch them all",
+    "Natural 20!",
+    "How would you like to do this?",
+    "X Gon' Give It To Ya",
+    "Do you like waffles?",
+    "Do you like pancakes?",
+    "Do you like french toast?",
+    "This one is for Julien",
+    "Never gunna give you up",
+    "Never gunna let you down",
+    "We love you Nadine",
+    "Minecraft",
+    "Terraria",
+    "Praise the Sun",
+    "Gotta go fast",
+    "We can do it!",
+    "Ice Ice Baby",
+    "Notice me",
+    "Hello there",
+    "General Kenobi",
+    "You've been Gnomed"
   ]
-
-  $('.header_left_text').text(randomArray[Math.floor(Math.random()*randomArray.length)]);
+  
+  if (window.location.href === "http://indecisivedecision.net/") {
+    $('.header_left_text').append("<h3>Indecisive Decision</h3>");
+  } else {
+    $('.header_left_text').text(randomArray[Math.floor(Math.random()*randomArray.length)]);
+  }
 
   // To shorten code, refers to modal
   var modal = document.getElementById('modal');
