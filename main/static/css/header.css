@@ -55,8 +55,7 @@ header .right_half {
     width: 100%;
 }
 
-.info_wrapper {
-    width: 30%;
+.info_wrapper { 
     flex: 2;
 }
 
