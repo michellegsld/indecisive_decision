@@ -45,7 +45,8 @@ window.onload = () => {
     "Hyah",
     "Hey Listen"
   ]
-  
+
+    // Check which html is being used to change text next to logo
   if (window.location.href === "http://indecisivedecision.net/") {
     $('.header_left_text').append("<h3>Indecisive Decision</h3>");
   } else {
