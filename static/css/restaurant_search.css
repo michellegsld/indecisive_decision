@@ -205,3 +205,23 @@ html {
 @media screen and (max-width: 530px) {
 
 }
+
+.favorite {
+    background-color: pink;
+    width: 20px;
+    height: 10px;
+    border-style: none;
+    border-radius: 25px;
+    margin: 4px;
+    transition-duration: 0.3s;
+}
+
+.favorited {
+    background-color: purple;
+    width: 25px;
+    height: 8px;
+    border-style: none;
+    border-radius: 25px;
+    margin: 4px;
+    transition-duration: 0.3s;
+}

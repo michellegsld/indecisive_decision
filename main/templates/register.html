@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head_inherit %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/register.css' %}" />
+{% endblock %}
+
+{% block container %}
+    <div class="container_register">
+		<div class="form_box_register">
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+
+            <button class="btn btn-outline-info" type="submit">Register</button>
+
+        </form>
+
+		If you already have an account <a href="/login" target="blank"><strong>login</strong></a> instead.
+		</div>
+	</div>
+
+{% endblock %}}

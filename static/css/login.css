@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+	justify-content: center;
+	background-color: #0d5b822e;
+}
+
+.container_login {
+	background: #fefefe;
+	border-radius: 8px;
+	border: 1px solid #888;
+	padding: 10px;;
+}
+
+.first_container {
+	flex: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.form_box_login {
+	background-color: #ff8fb3;
+	border: 1px solid #888;
+	padding: 12px;
+}
+
+.helptext {
+	display: none;
+}
+
+.containers {
+	flex: 1;
+}
+
+.form_profile {
+	display: none;
+}
+
+.info_wrapper {
+	display: none;
+}

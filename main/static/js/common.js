@@ -37,7 +37,13 @@ window.onload = () => {
     "Notice me",
     "Hello there",
     "General Kenobi",
-    "You've been Gnomed"
+    "You've been Gnomed",
+    "What's to come",
+    "Baja blast",
+    "Is this a decision?",
+    "Fox only, no items, final destination",
+    "Hyah",
+    "Hey Listen"
   ]
 
     // Check which html is being used to change text next to logo

@@ -25,11 +25,37 @@
         </div>
       </div>
       <div class="right_half">
-        <text class="login_signup_text">
-          More Info
-        </text>
+        <div class="list_options">
+          <div class="info_wrapper">
+            <button class="login_signup_text">
+              More Info
+            </button>
+          </div>
+    {% if user.is_authenticated %}
+          <p>
+            <form style="margin:0;" action='/profile/' method="GET" class="form_profile">
+                  <input type="submit" value="{{ user }}" class="account_button"/>
+              </form>
+              <form style="margin:0;" action='/logout/' method="POST" class="form_logout">
+              {% csrf_token %}
+                  <input type="submit" value="Logout" class="account_button"/>
+                  <input type="hidden" name="next" value="{{ current_path }}"/>
+              </form>
+          </p>
+        </div>
       </div>
     </header>
+    {% else %}
+    <a href="/login/" class="form_profile"> <button class="account_button">
+      Login
+    </button> </a>
+      <a href="/register/" class="form_logout"> <button class="account_button">
+          Register
+        </button> </a>
+      </div>
+      </div>
+    </header>
+    {% endif %}    
     <div id="modal" class="modal">
       <div class="modal_container">
         <div class="modal_box">

@@ -16,7 +16,7 @@ header .left_half {
     height: 100%;
     margin-left: 3%;            /* To not have text right against edge */
     display: flex;
-    flex: 3;
+    flex: 1;
     justify-content: flex-start;/* Horizontal (text) */
     align-items: center;        /* Vertical  (text) */
 }
@@ -34,8 +34,95 @@ header .right_half {
     padding: 5px;               /* To not have text right against edges */
 }
 
+.account_button {
+    transition-duration: 0.3s;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 20px;
+    color: #ebeff1;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 6px 15px;
+    background: transparent;
+    transition: background-color 0.25s;
+    outline: none;
+    width: 100%;
+}
+
+.info_wrapper { 
+    flex: 2;
+}
+
+.form_profile {
+    margin: 0;
+    flex: 3;
+    max-width: 150px;
+}
+
+.form_logout {
+    margin: 0;
+    flex: 1;
+    display: none;
+}
+
+.account_button:hover {
+    background-color: #ff8fb3;
+}
+
 .login_signup_text {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid rgba(255,255,255,0.7);
+    border-radius: 20px;
+    color: #ebeff1;
+    box-shadow: none;
+    text-shadow: none;
+    padding: 6px 15px;
+    background: transparent;
+    transition: background-color 0.25s;
+    outline: none;
+}
+
+.login_signup_text:hover {
+    background-color: #ff8fb3;
+}
+
+.list_options {
+    display: flex;
+}
+
+/*.login_signup_text {
     color: black;
     text-decoration: underline;
-    padding: 5px;               /* To not have text right against edges */
+    padding: 5px;               
+} */
+
+
+@media (max-width: 500px) {
+    .account_button {
+        padding: 5px 10px;
+    }
+
+    .list_options {
+        padding-top: 10px;
+        height: 100%;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 215px;
+    }
+    
+    .login_signup_text {
+        padding: 5px 10px;
+    }
 }

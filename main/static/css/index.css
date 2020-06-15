@@ -51,8 +51,8 @@
 }
 
 .feature_section img {
-    max-width: 80px;
-    max-height: 100px;
+    max-width: 120px;
+    max-height: 150px;
 }
 
 .feature_section {
@@ -70,6 +70,12 @@
 }
 
 @media screen and (max-width: 530px) {
+    .first_container img {
+        width: 250px;
+        height: 250px;
+        margin: auto;
+        display: flex;
+    }
     .bottom_half {
         flex: 3;
         flex-direction: column;
@@ -78,5 +84,9 @@
     }
     .container button {
         margin: 20px;
+    }
+    .feature_section img {
+        max-width: 120px;
+        max-height: 150px;
     }
 }
