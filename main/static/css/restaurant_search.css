@@ -157,20 +157,52 @@ html {
     text-align: center;
     background-color: #bd7cbd ;
     padding: 5px;
+    padding-top: 0px;
     border: 1px solid #888;
     height: 100%;
     min-width: 95%;
     min-height: 350px;
 }
 
+.restaurant_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 95%;
+}
+
+.restaurant_header button {
+    border-style: none;
+    border-radius: 25px;
+    margin-top: 13px;
+    margin-left: 10px;
+    transition-duration: 0.3s;
+}
+
+.favorite {
+    background-color: pink;
+    width: 20px;
+    height: 10px;
+    margin: 4px;
+}
+
+.favorited {
+    background-color: purple;
+    width: 25px;
+    height: 8px;
+}
+
 .restaurant_name h2 {
+    margin-top: 0px;
     margin-bottom: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .restaurant_rating img {
     width: 160px;
     height: auto;
-    margin-top: 15px;
+    margin-top: 10px;
     margin-bottom: 5px;
 }
 
@@ -204,24 +236,4 @@ html {
 
 @media screen and (max-width: 530px) {
 
-}
-
-.favorite {
-    background-color: pink;
-    width: 20px;
-    height: 10px;
-    border-style: none;
-    border-radius: 25px;
-    margin: 4px;
-    transition-duration: 0.3s;
-}
-
-.favorited {
-    background-color: purple;
-    width: 25px;
-    height: 8px;
-    border-style: none;
-    border-radius: 25px;
-    margin: 4px;
-    transition-duration: 0.3s;
 }
