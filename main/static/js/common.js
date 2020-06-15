@@ -46,8 +46,21 @@ window.onload = () => {
     'Is this a decision?',
     'Fox only, no items, final destination',
     'Hyah',
-    'Hey Listen'
-  ];
+    'Hey Listen',
+    'Get out of here Kay',
+    'Real Facts',
+    'Let me help you with that',
+    'Stop you violated the law',
+    'Hey, you are finally awake',
+    'The checker is broken',
+    'I have the high ground',
+    'Cohort 10',
+    'And his name is John Cena',
+    'Roger Roger',
+    'There are no mistakes',
+    "We still don't make the decision",
+    "Where is Caitlin's icebreaker?",
+  ]
 
   // Check which html is being used to change text next to logo
   if (window.location.href === 'http://indecisivedecision.net/') {
