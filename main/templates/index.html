@@ -5,12 +5,63 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}" />
 {% endblock %}
 
+{% block modal %}
+  <h2>About</h2>
+  <br>
+  <h4>An application to help the indecisive decide.</h4>
+  <p>Hello! Welcome to our website. The purpose of this application is to help get rid of your indecision reguarding a particular subject. For our MVP, we have particularly completed the restaurant decider.</p>
+  <p>This application started with discussion of what to make for our portfolio project at <a href="https://www.holbertonschool.com/">Holberton School</a>. Pondering about we thought about a decision maker for various subjects and even joked about a decison maker for a final project, but ultimately decided to start our focus on food and restaurants.</p>
+  <h4>Our team</h4>
+  <p>Ezra Nobrega <a href="">Linkedin</a>, <a href="">github</a>, <a href="">Twitter</a></p>
+  <p>Michelle Giraldo <a href="">Linkedin</a>, <a href="">github</a>, <a href="">Twitter</a></p>
+  <p>Mitchell Moscovics <a href="">Linkedin</a>, <a href="">github</a>, <a href="">Twitter</a></p>
+  <h4><a href="https://github.com/michellegsld/indecisive_decision">Our Project</a></h4>
+  <br>
+  {% endblock %}
+
 {% block container %}
-  <div class="top_half">
-    Time to Decide Between...
+  <img src="static/img/what_do.png" atl="Git Gud">
+
+  <div class="blurb">
+    <h1>You don't want to be that guy</h1>
+    <p>We all experience indecision in some form or another, and we strive to help make that decision easier for you. With some info and filters you have a decision maker at your finger tips, to either give you a single answer or a few to pick between.</p>
+    <h3>Try out our restaurant MVP</h3>
   </div>
-  <div class="bottom_half">
-    <button>Restaurants</button>
-    <button>Recipes</button>
+
+  <div class="MVP_top_half">
+    <h1>I'm looking for...</h1>
   </div>
-{% endblock %}
+
+  <div class="MVP_bottom_half">
+    <a href="http://indecisivedecision.net/restaurants">
+      <button class="option_button">Restaurants</button>
+    </a>
+  </div>
+
+  <div class="feature_section">
+    <img src="static/img/mvp_decider.png" alt="Oops image didn't load">
+    <div>
+      <h3>Restaurant Decider</h3>
+      <p>Our resturant decider is our first focus for an overall decision maker. Fill in the required and optional fields and roll for your results</p>
+    </div>
+  </div>
+  <div class="feature_section">
+    <img>
+    <div>
+      <h3>Login</h3>
+      <p>With basic user accounts and functionality, we plan to allow personalization to the decider application.</p>
+    </div>
+  </div>
+  <div class="feature_section">
+    <img>
+    <div>
+      <h3>Favorites</h3>
+      <p>Picking and choosing is one thing but liking and favoriting is another, save your favorite results to your account to check back or save for another time.</p>
+    </div>
+  </div>
+
+  <div class="future">
+    <h1>Whats to come</h1>
+    <p>With the scope of this application there is alot that can be done, and with our time constraints we had to limit our focus on completing a single decider as an MVP. We originally planned on adding foods and recipes and once we can we plan to turn focus on creating a recipe decider that allows for user created recipes and foods. If possible there are thoughts of other deciders that utilize more of a database and will be whatever interests us at the time or whatever we end up needing because of our own indecision.</p>
+  </div>
+  {% endblock %}
