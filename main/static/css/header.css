@@ -62,11 +62,13 @@ header .right_half {
 .form_profile {
     margin: 0;
     flex: 3;
+    max-width: 150px;
 }
 
 .form_logout {
     margin: 0;
     flex: 1;
+    display: none;
 }
 
 .account_button:hover {

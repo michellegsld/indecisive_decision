@@ -84,3 +84,10 @@ footer {
 	font-size: 15px;
 }
 
+.form_logout {
+	display: block;
+}
+
+.form_profile {
+	display: none;
+}
