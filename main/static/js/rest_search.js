@@ -93,7 +93,7 @@ $(document).ready(() => {
         }
         category = category + place['categories'][i]['title'];
       }
-      $(id + ' DIV.restaurant_categories').append(category + ")");
+      $(id + ' DIV.restaurant_categories').append('<text>' + category + ') </text>');
     }
 
     // Just returns which rating image to use
