@@ -13,8 +13,15 @@
 	</div>
 {% endblock %}
 
+{% block modal %}
+  <h2>User Page</h2>
+  <br>
+  <h4> Access your personal favorites to remove any you wish! </h4>
+{% endblock %}
+
 {% block second_container %}
 	<div class="profile_body">
+		<h3> Favorites </h3>
 		<section class="profile_bottom">
 			{% for favorite in favorites %}
 				<div class="favorites_object">

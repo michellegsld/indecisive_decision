@@ -19,6 +19,13 @@
 	justify-content: center;
 	align-items: center;
 }
+.btn.btn-outline-info {
+	background: floralwhite;
+	border-style: solid;
+	padding: 2px 15px;
+	border-radius: 10px;
+	margin: 4px;
+}
 
 .form_box_login {
 	background-color: #ff8fb3;

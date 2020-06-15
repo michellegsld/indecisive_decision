@@ -104,6 +104,11 @@ footer {
 	border: 0px;
 }
 
+.profile_body h3 {
+	background-color: floralwhite;
+	padding: 10px 30px;
+	border-radius: 10px;
+}
 
 .deleted {
 	border: 0px;
