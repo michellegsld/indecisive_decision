@@ -62,16 +62,16 @@
             <input type="radio" name="results" id="10" checked="yes" /> <text>10</text>
             <input type="radio" name="results" id="20"/> <text>20</text>
             </form>
-            <button name="roll" id="region_search">Roll</button>
+            <button name="roll" id="region_search" href="#restaurant_results">Roll</button>
         </div>
-        <button name="lucky" id="region_search">Feeling Lucky?</button>
+        <button name="lucky" id="region_search" href="#restaurant_results">Feeling Lucky?</button>
       </div>
     </div>
   </div>
 {% endblock %}
 
 {% block second_container %}
-  <section class="restaurant_result">
+  <section class="restaurant_result" id="restaurant_result">
 <!--    <article class="single_result">
       <div class="restaurant_name">
         <h2></h2>
