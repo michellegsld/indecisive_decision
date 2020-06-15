@@ -58,10 +58,12 @@ footer {
 .favorites_object {
 	display: flex;
 	width: 300px;
-	height: 350px;
 	justify-content: center;
 	flex-direction: column;
 	margin: 5px;
+	background: floralwhite;
+	padding: 10px;
+	border-radius: 10px;
 }
 
 .inner_border {
@@ -69,7 +71,7 @@ footer {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: pink;
+	background-color: #bd7cbd;
 	border-radius: 10px;
 	padding: 5px;
 }
@@ -90,4 +92,26 @@ footer {
 
 .form_profile {
 	display: none;
+}
+.delete_favorite {
+	background: floralwhite;
+	border-radius: 10px;
+	padding: 5px 20px;
+	font-size: 10px;
+	margin-top: 5px;
+	border-style: solid;
+	transition-duration: 0.3s;
+	border: 0px;
+}
+
+
+.deleted {
+	border: 0px;
+	background-color: red;
+	border-radius: 10px;
+	padding: 3px 25px;
+	font-size: 10px;
+	margin-top: 5px;
+	border-style: solid;
+	transition-duration: 0.3s;
 }
