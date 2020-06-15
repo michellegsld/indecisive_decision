@@ -65,6 +65,7 @@ window.onload = () => {
   // Check which html is being used to change text next to logo
   if (window.location.href === 'http://indecisivedecision.net/') {
     $('.header_left_text').append('<h3>Indecisive Decision</h3>');
+    $('.login_signup_text').text('About');
   } else {
     $('.header_left_text').text(randomArray[Math.floor(Math.random() * randomArray.length)]);
   }
@@ -89,4 +90,5 @@ window.onload = () => {
   $('#10').prop('checked', true);
   $('#location_input').val('');
   $('#roll').text('Roll');
+  $('#lucky').text('Feeling Lucky?');
 };

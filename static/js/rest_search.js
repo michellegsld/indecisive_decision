@@ -46,6 +46,9 @@ $(document).ready(() => {
           if (obj.currentTarget.name === 'roll') { // Check if button selected was "Roll"
             $('button[name$="roll"]').text('Re-roll');
             total = $('#total_roll input:checked').attr('id'); // in order to set total to amount selected
+            document.getElementsByClassName('narrow_button')[0].style.display = 'flex'; // display narrow button if "roll" clicked on
+          } else {
+            $('button[name$="lucky"]').text('Try your luck again?');
           }
           let result = $(data.businesses); // Set result to all buinesses returned
           if (data.total >= total) { // Make sure query result amount is >= to total
@@ -58,7 +61,6 @@ $(document).ready(() => {
           }
           document.getElementsByClassName('second_container')[0].style.display = 'flex'; // Display second_container on results
           $('html, body').animate({ scrollTop: '510px' }, 1000); // Auto scroll down to results once displayed
-          console.log(resultIds);
         } else { // Error on the fact that no buisnesses were returned from query
           document.getElementById('popup2').style.display = 'flex';
         }
@@ -137,12 +139,28 @@ $(document).ready(() => {
     }
   });
 
+  // Randomly remove a result on "narrow" click
+  $('.second_container').on('click', 'button.narrow_button', function () {
+    const rmId = resultIds[Math.floor(Math.random() * resultIds.length)];
+    const index = resultIds.indexOf(rmId);
+    resultIds.splice(index, 1);
+    $('.restaurant_result article').remove('#' + rmId);
+    // Hide narrow button if less than two options
+    if ($('.restaurant_result article').length < 2) {
+      document.getElementsByClassName('narrow_button')[0].style.display = 'none';
+    }
+  });
+
   // Remove result on click
   $('.restaurant_result').on('click', 'span.close', function () {
     const rmId = $(this).attr('id');
     const index = resultIds.indexOf(rmId);
-    resultIds.splice(index, index);
+    resultIds.splice(index, 1);
     $('article').remove('#' + rmId);
+    // Hide narrow button if less than two options
+    if ($('.restaurant_result article').length < 2) {
+      document.getElementsByClassName('narrow_button')[0].style.display = 'none';
+    }
   });
 
   // Favorite result on click
