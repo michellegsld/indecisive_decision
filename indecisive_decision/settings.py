@@ -25,7 +25,7 @@ SECRET_KEY = 'r=9r3g7$f48j@&qj0wme54_#_^pro*w0c&+-3d2)_d%g4&5@o1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','indecisivedecision-env.eba-xrwsyuw3.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['127.0.0.1','44.225.219.86','indecisivedecision.net','indecisivedecision-env.eba-xrwsyuw3.us-west-2.elasticbeanstalk.com']
 
 # Application definition
 
