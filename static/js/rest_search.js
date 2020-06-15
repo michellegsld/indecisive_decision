@@ -7,6 +7,8 @@ $(document).ready(() => {
   $('select#price').change( function () {
     if ($(this).find('option:selected').attr("value") > 0) {
       price = $(this).find('option:selected').attr("value");
+    } else {
+      price = "1,2,3,4";
     }
   });
 
@@ -14,6 +16,8 @@ $(document).ready(() => {
   $('select#rating').change( function () {
     if ($(this).find('option:selected').attr("value") > 0) {
       rating = $(this).find('option:selected').attr("value");
+    } else {
+      rating = "1";
     }
   });
 
@@ -25,7 +29,7 @@ $(document).ready(() => {
     $('SECTION.restaurant_result').empty(); // Empty section in order to provide new results on button click
     let total = 1; // Minimal amount of results to display
 
-    let location = $('INPUT.location_input').val().replace(" ", "_")
+    let location = $('INPUT.location_input').val().replace(" ", "_");
 
     $.ajax({
       url: 'http://indecisivedecision.net/api_query/' + location + '/' + rating + '/' + price + '/',
@@ -61,11 +65,12 @@ $(document).ready(() => {
       newArt.append(resultTemplate);
       let id = '#' + place['id'];
 
-      $(id + ' DIV.restaurant_name H2').text(place["name"]);    // Restaurant Name
+      // Restaurant Name
+      $(id + ' DIV.restaurant_name H2').text(place["name"]);
 
       // Star rating image
-      starImage = '/static/img/yelp_stars/web_and_ios/small/' + ratingImage(place['rating']);
-      $(id + ' DIV.restaurant_rating').append('<img src="' + starImage + '" alt="Yelp Star Rating">');
+      starImage = '/static/img/yelp_stars/web_and_ios/extra_large/' + ratingImage(place['rating']);
+      $(id + ' DIV.restaurant_rating').append('<img src="' + starImage + '" alt="Yelp Star Rating" title="Based on ' + place['review_count'] + ' review(s)">');
 
       // Restaurant Image
       $(id + ' DIV.restaurant_img').append('<img src="' + place['image_url'] + '" alt="(No image available)">');
@@ -83,7 +88,7 @@ $(document).ready(() => {
       $(id + ' DIV.restaurant_address').append('<text>' + address + '</text>');
 
       // Restaurant Phone Number
-      $(id + ' DIV.restaurant_phone').append('<text href="tel:' + place['phone'] + '">' +place['display_phone'] + '</text>');
+      $(id + ' DIV.restaurant_phone').append('<a href="tel:' + place['phone'] + '">' +place['display_phone'] + '</a>');
 
       // Restaurant Categories
       let category = "(";
@@ -93,16 +98,25 @@ $(document).ready(() => {
         }
         category = category + place['categories'][i]['title'];
       }
-      $(id + ' DIV.restaurant_categories').append('<text>' + category + ') </text>');
+      //$(id + ' DIV.restaurant_categories').append('<text>' + category + ') </text>');
+
+      // Price Image
+      if (price === "1,2,3,4") {
+        $(id + ' DIV.restaurant_price').append('<h1>' + place['price'] + '</h1>');
+        $('.restaurant_footer').css({'justify-content': 'space-evenly'});
+      }
+
+      // Yelp Logo
+      $(id + ' DIV.yelp_logo').append('<a href="' + place['url'] + '"><img src="/static/img/yelp_logo.svg" alt="View on Yelp!"></a>');
     }
 
     // Just returns which rating image to use
     function ratingImage(rating) {
-     const starDict = {0: 'small_0@2x.png', 1: 'small_1@2x.png',
-                       1.5: 'small_1_half@2x.png', 2: 'small_2@2x.png',
-                       2.5: 'small_2_half@2x.png', 3: 'small_3@2x.png',
-                       3.5: 'small_3_half@2x.png', 4: 'small_4@2x.png',
-                       4.5: 'small_4_half@2x.png', 5: 'small_5@2x.png'};
+     const starDict = {0: 'extra_large_0@3x.png', 1: 'extra_large_1@3x.png',
+                       1.5: 'extra_large_1_half@3x.png', 2: 'extra_large_2@3x.png',
+                       2.5: 'extra_large_2_half@3x.png', 3: 'extra_large_3@3x.png',
+                       3.5: 'extra_large_3_half@3x.png', 4: 'extra_large_4@3x.png',
+                       4.5: 'extra_large_4_half@3x.png', 5: 'extra_large_5@3x.png'};
       return (starDict[rating]);
     }
   });

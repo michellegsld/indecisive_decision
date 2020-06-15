@@ -168,7 +168,7 @@ html {
 }
 
 .restaurant_rating img {
-    width: auto;
+    width: 160px;
     height: auto;
     margin-top: 15px;
     margin-bottom: 5px;
@@ -183,6 +183,23 @@ html {
 .restaurant_address,
 .restaurant_phone {
     margin: 5px;
+}
+
+.restaurant_footer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+.yelp_logo img {
+    max-width: 100px;
+}
+
+.restaurant_price {
+    font-size: 30px;
 }
 
 @media screen and (max-width: 530px) {
