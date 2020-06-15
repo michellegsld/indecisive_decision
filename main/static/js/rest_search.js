@@ -1,4 +1,4 @@
-const resultTemplate = '<div class="result_box"><div class="restaurant_name"><h2></h2><div class="restaurant_rating"></div></div><div class="restaurant_img"></div><div class="restaurant_info"><div class="restaurant_location"></div><div class="restaurant_phone"></div><div class="restaurant_categories"></div></div><div class="restaurant_footer"><div class="restaurant_price"></div><div class="yelp_logo"></div></div></div>'
+const resultTemplate = '<div class="result_box"><div class="restaurant_name"><h2></h2><div class="restaurant_rating"></div></div><div class="restaurant_img"></div><div class="restaurant_address"></div><div class="restaurant_phone"></div><div class="restaurant_categories"></div><div class="restaurant_footer"><div class="restaurant_price"></div><div class="yelp_logo"></div></div></div>'
 let price = "1,2,3,4";
 let rating = "1";
 
@@ -46,7 +46,8 @@ $(document).ready(() => {
           for (place of result) {  // Then for each buisness left
             populateSearchResult(place); // populate and display them
           }
-          document.getElementsByClassName('second_container')[0].style.display = 'flex'; // Display second_container on results filled
+          document.getElementsByClassName('second_container')[0].style.display = 'flex'; // Display second_container on results 
+          $("html, body").animate({ scrollTop: "510px" }, 1000);    // Auto scroll down to results once displayed
          } else {  // Error on the fact that no buisnesses were returned from query
           document.getElementById('popup2').style.display = 'flex';
          }
@@ -54,8 +55,6 @@ $(document).ready(() => {
     });
 
     function populateSearchResult (place) {
-      //$('#restaurant_result').append()
-      //$('<article>hi</article>').appendTo($('div #restaurant_result'));
       console.log(place);
       const newArt = $('<article class="result_container"></article>').appendTo($('SECTION.restaurant_result'));
       newArt.attr('id', place['id']);
@@ -68,13 +67,33 @@ $(document).ready(() => {
       starImage = '/static/img/yelp_stars/web_and_ios/small/' + ratingImage(place['rating']);
       $(id + ' DIV.restaurant_rating').append('<img src="' + starImage + '" alt="Yelp Star Rating">');
 
-      //Restaurant Image
-      $(id + ' DIV.restaurant_img').append('<img src="' + place['image_url'] + '" alt="Restaurant Image">');
+      // Restaurant Image
+      $(id + ' DIV.restaurant_img').append('<img src="' + place['image_url'] + '" alt="(No image available)">');
 
-      //const location = data.businesses[0].location
-      //const address = [location.address1, location.address2, location.address3, location.city, location.state, location.zip_code].join(" ");
-      //console.log(address);
+      // Restaurant Address
+      let address = "";
 
+      for (i = 0; i < place['location']['display_address'].length; i++) {
+        if (i > 0){
+          address = address + ", ";
+        }
+        address = address + place['location']['display_address'][i];
+      }
+
+      $(id + ' DIV.restaurant_address').append('<text>' + address + '</text>');
+
+      // Restaurant Phone Number
+      $(id + ' DIV.restaurant_phone').append('<text href="tel:' + place['phone'] + '">' +place['display_phone'] + '</text>');
+
+      // Restaurant Categories
+      let category = "(";
+      for (i = 0; i < place['categories'].length; i++) {
+        if (i > 0){
+          category = category + ", ";
+        }
+        category = category + place['categories'][i]['title'];
+      }
+      $(id + ' DIV.restaurant_categories').append(category + ")");
     }
 
     // Just returns which rating image to use
