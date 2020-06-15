@@ -34,7 +34,7 @@
 		$('button.delete_favorite').click( function () {
 			const id = $(this).attr('id')
 			$.ajax({
-     		url: 'http://127.0.0.1:8000/delete_favorite/' + id,
+     		url: '/delete_favorite/' + id,
       		type: 'GET',
       		dataType: 'json',
 			success: function (data) {
