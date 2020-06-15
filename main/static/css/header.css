@@ -62,13 +62,11 @@ header .right_half {
 
 .form_profile {
     margin: 0;
-    width: 30%;
     flex: 3;
 }
 
 .form_logout {
     margin: 0;
-    width: 30%;
     flex: 1;
 }
 
