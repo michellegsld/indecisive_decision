@@ -18,14 +18,23 @@ html {
     align-items: center;
     text-align: center;
     margin: 10px;
+    margin-top: 20px;
     padding: 0 10px;
-    max-width: 60%;
+    width: 60%;
+    max-width: 550px;
     border: 2px solid #444;
     background: floralwhite;
 }
 
 .popup h2 {
+    margin-top: 10px;
     margin-bottom: 0px;
+}
+
+.popup p {
+    margin: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
 
 .top_half {                 /* Holds "Restaurant Search */
@@ -153,7 +162,6 @@ html {
 .restaurant_result {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     height: 100%;
     width: 100%;
@@ -169,7 +177,7 @@ html {
     width: 300px;
     min-height: 350px;
     border-radius: 8px;
-    margin: 10px;
+    margin: 15px;
     padding: 10px;
 
 }
@@ -231,10 +239,15 @@ html {
     margin-bottom: 5px;
 }
 
+.restaurant_img {
+    min-height: 150px;
+}
+
 .restaurant_img img {
     max-width: 85%;
     max-height: 250px;
     margin: 5px;
+    line-height: 125px;
 }
 
 .restaurant_address,
@@ -255,10 +268,14 @@ html {
     max-width: 100px;
 }
 
-.restaurant_price {
+.restaurant_price h1 {
     font-size: 30px;
+    margin: 0px;
+    margin-top: 8px;
 }
 
 @media screen and (max-width: 530px) {
-
+    .result_container {
+        margin: 10px;
+    }
 }
