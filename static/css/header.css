@@ -57,6 +57,8 @@ header .right_half {
 
 .info_wrapper { 
     flex: 2;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .form_profile {
