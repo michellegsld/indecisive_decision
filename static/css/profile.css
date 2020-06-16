@@ -110,6 +110,11 @@ footer {
 	border-radius: 10px;
 }
 
+.fav_address{ 
+	text-align: center;
+	width: 80%;
+}
+
 .deleted {
 	border: 0px;
 	background-color: red;
