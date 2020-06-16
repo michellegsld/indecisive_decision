@@ -18,12 +18,12 @@
 
 {% block container %}
   <div id="popup1" class="popup">
-    <h2>ERROR</h2>
-    <p>Hey! There seems to be an error with the location you inputted, please double check and try again! Else there was a time out error connecting to Yelp :C</p>
+    <h2>Oh-no!</h2>
+    <p>Hey, seems like something went wrong here. Please double check the location you entered, if nothing seems wrong then there might've been a time out error connecting to Yelp, so please try again ^-^</p>
   </div>
   <div id="popup2" class="popup">
-    <h2>ERROR</h2>
-    <p>Sorry! There is nothing currently open/available with those parameters.</p>
+    <h2>Sorry!</h2>
+    <p>It doesn't look like there are any restaurants available with those parameters- so shake them up!<br>Note that we only provide you with locations currently open :)</p>
   </div>
   <div class="top_half">
     <h2>Restaurant Decider</h2>
@@ -72,6 +72,7 @@
 {% endblock %}
 
 {% block second_container %}
+  <button class="narrow_button">Randomly narrow this selection!</button>
   <section class="restaurant_result" id="restaurant_result">
 <!--    <article class="single_result">
       <div class="restaurant_name">
