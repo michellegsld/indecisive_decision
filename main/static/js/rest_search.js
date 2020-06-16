@@ -49,6 +49,7 @@ $(document).ready(() => {
             document.getElementsByClassName('narrow_button')[0].style.display = 'flex'; // display narrow button if "roll" clicked on
           } else {
             $('button[name$="lucky"]').text('Try your luck again?');
+            document.getElementsByClassName('narrow_button')[0].style.display = 'none'; // hide narrow button if "lucky" clicked
           }
           let result = $(data.businesses); // Set result to all buinesses returned
           if (data.total >= total) { // Make sure query result amount is >= to total
