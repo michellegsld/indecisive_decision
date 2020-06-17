@@ -119,7 +119,7 @@ $(document).ready(() => {
       }
 
       // Yelp Logo
-      $(id + ' DIV.yelp_logo').append('<a href="' + place.url + '"><img src="/static/img/yelp_logo.svg" alt="View on Yelp!"></a>');
+      $(id + ' DIV.yelp_logo').append('<a href="' + place.url + '" target="_blank"><img src="/static/img/yelp_logo.svg" alt="View on Yelp!"></a>');
     }
 
     // Just returns which rating image to use
