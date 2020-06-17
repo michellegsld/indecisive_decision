@@ -66,7 +66,7 @@ def restaurant_search(response):
 
 def api_query(response, location, rating, price="1,2,3,4"):
     API_KEY = "3ITPjXB1GPOj78Fag-o0LLQv2nOt7gmQWNjDJxqo7RK-HYmwVTyzm7F0MK7-Z6sPFmyaiEH5sgfU6JkrH4nNV06JHFTJ7GSPFlj7CdSDx12qPtaezp0-x01xJ9G9XnYx"
-    get_total = requests.get("https://api.yelp.com/v3/businesses/search", headers={"Authorization": "Bearer " + API_KEY}, params={'location': location, 'price': price, 'categories': 'restaurants,All', 'limit': 50})
+    get_total = requests.get("https://api.yelp.com/v3/businesses/search", headers={"Authorization": "Bearer " + API_KEY}, params={'location': location, 'price': price, 'categories': 'restaurants,All', 'limit': 50, 'radius': 24140})
     if "error" in get_total.json():
         return JsonResponse(get_total.json())
     total_results = float(get_total.json()["total"])
@@ -79,7 +79,7 @@ def api_query(response, location, rating, price="1,2,3,4"):
         "total": 0,
         "businesses": [],
     }
-    response_list = requests.get("https://api.yelp.com/v3/businesses/search", headers={"Authorization": "Bearer " + API_KEY}, params={'location': location, 'price': price, 'offset': offset, 'categories': 'restaurants,All', 'limit': 50})
+    response_list = requests.get("https://api.yelp.com/v3/businesses/search", headers={"Authorization": "Bearer " + API_KEY}, params={'location': location, 'price': price, 'offset': offset, 'categories': 'restaurants,All', 'limit': 50, 'radius': 24140})
     if (float(rating) != 0):
         for i in range(0, len(response_list.json()["businesses"]) - 1):
             if response_list.json()["businesses"][i]["rating"] >= float(rating):
