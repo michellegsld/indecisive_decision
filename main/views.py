@@ -73,8 +73,7 @@ def api_query(response, location, rating, price="1,2,3,4"):
     if total_results < 0:
         total_results += 50
     offset = random.randint(1, total_results)
-    print(offset)
-    print(float(get_total.json()["total"]))
+    
     new_dict = {
         "total": 0,
         "businesses": [],
