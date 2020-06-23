@@ -2,6 +2,8 @@ from django.urls import path, re_path
 from . import views
 from main.views import LoginRequest
 
+# All the Paths for the website
+
 urlpatterns = [
 path("register/", views.RegisterView, name="register"),
 path("login/", views.LoginRequest, name="login"),
